@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registration Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="registration-title">
+      <h1 id="registration-title">Create your account</h1>
+      <p class="subtitle">Sign up to get started. It only takes a minute.</p>
+
+      <noscript>
+        <p class="noscript">JavaScript is disabled. Client-side validation will be limited.</p>
+      </noscript>
+
+      <form id="registrationForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required aria-describedby="firstName-error" />
+            <p class="error-message" id="firstName-error" role="alert" aria-live="polite"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required aria-describedby="lastName-error" />
+            <p class="error-message" id="lastName-error" role="alert" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="email-error" />
+          <p class="error-message" id="email-error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required aria-describedby="password-hint password-error" />
+          <p class="hint" id="password-hint">Use at least 8 characters, including a number and a letter.</p>
+          <p class="error-message" id="password-error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required aria-describedby="confirmPassword-error" />
+          <p class="error-message" id="confirmPassword-error" role="alert" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group checkbox">
+          <input id="terms" name="terms" type="checkbox" required aria-describedby="terms-error" />
+          <label for="terms">I agree to the terms and conditions</label>
+        </div>
+        <p class="error-message" id="terms-error" role="alert" aria-live="polite"></p>
+
+        <button type="submit" class="btn-primary" id="submitBtn">Create account</button>
+
+        <p class="form-feedback" id="formSuccess" role="status" aria-live="polite" hidden>
+          ✅ Your account has been created.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
